@@ -17,8 +17,11 @@ namespace StringProblems
             int result = 0;
             for (int i = s[0] == '-' ? 1 : 0; i < s.Length; i++)
             {
-                //removing '0', to handle the overflow char
-                result = result * 10 + (s[i] - '0');
+                if (s[i] >= '0' && s[i] <= '9')
+                {
+                    //removing '0', to handle the overflow char
+                    result = result * 10 + (s[i] - '0');
+                }
             }
 
             return isNegative ? -result : result;

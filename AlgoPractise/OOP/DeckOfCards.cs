@@ -13,6 +13,24 @@ namespace OOP
         private const int NUMBER_OF_CARDS = 52;
         private Random randNum;
 
+        public class Card
+        {
+            private string face;
+            private string suit;
+
+            public Card() { }
+
+            public Card(string cardFace, string cardSuit)
+            {
+                face = cardFace;
+                suit = cardSuit;
+            }
+
+            public override string ToString()
+            {
+                return face + "Of" + suit;
+            }
+        }
         public DeckOfCards()
         {
             string[] faces = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
@@ -53,22 +71,5 @@ namespace OOP
         }
     }
 
-    public class Card
-    {
-        private string face;
-        private string suit;
 
-        public Card() { }
-
-        public Card(string cardFace, string cardSuit)
-        {
-            face = cardFace;
-            suit = cardSuit;
-        }
-
-        public override string ToString()
-        {
-            return face + "Of" + suit;
-        }
-    }
 }
